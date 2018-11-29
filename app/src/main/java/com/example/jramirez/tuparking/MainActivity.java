@@ -10,6 +10,10 @@ public class MainActivity extends AppCompatActivity {
     TextView txt;
     Button checkInButton, checkOutButton;
     Integer counter;
+    String lotdata;
+    JSONfunctions j;
+    DBConnect connect = new DBConnect();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
