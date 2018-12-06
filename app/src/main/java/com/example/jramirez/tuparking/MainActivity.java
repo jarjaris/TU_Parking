@@ -8,7 +8,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView txt;
-    Button checkInButton, checkOutButton;
+    Button inOutButton;
+    boolean checkedIn;
     Integer counter;
     String lotdata;
     JSONfunctions j;
@@ -20,24 +21,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txt = (TextView) findViewById(R.id.NumberOfSpots);
-        checkInButton = (Button) findViewById(R.id.CheckInButton);
-        checkOutButton = (Button) findViewById(R.id.CheckOutButton);
+        inOutButton = (Button) findViewById(R.id.CheckOutButton);
+        checkedIn = false;
         counter = 7;
         txt.setText(Integer.toString(counter));
 
-        checkInButton.setOnClickListener(new View.OnClickListener() {
+        inOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counter = counter + 1;
-                txt.setText(Integer.toString(counter));
-            }
-        });
-
-        checkOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (counter > 0) {
+                if(checkedIn) {
+                    counter = counter + 1;
+                    checkedIn = false;
+                }
+                else if(!checkedIn && counter > 0) {
                     counter = counter - 1;
+                    checkedIn = true;
                 }
                 txt.setText(Integer.toString(counter));
             }
