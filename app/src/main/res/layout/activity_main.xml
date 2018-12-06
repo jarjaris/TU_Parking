@@ -10,7 +10,7 @@
         android:id="@+id/welcomeText"
         android:layout_width="339dp"
         android:layout_height="wrap_content"
-        android:text="Welcome to the Transylvania University Location & Parking App Pre-Alpha!"
+        android:text="Welcome to the Transylvania University Location &amp; Parking App Pre-Alpha!"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
