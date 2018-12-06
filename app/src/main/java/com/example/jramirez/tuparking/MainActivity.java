@@ -14,16 +14,20 @@ import java.util.List;
 import java.util.ArrayList;
 import android.widget.AdapterView.OnItemSelectedListener;
 
+import android.content.Intent;
+import android.net.Uri;
+
+
 
 
 public class MainActivity extends AppCompatActivity implements OnItemSelectedListener{
     TextView txt;
-    Button inOutButton;
+    Button inOutButton, directionsButton;
     boolean checkedIn;
     Integer counter;
     String lotdata;
     JSONfunctions j;
-    DBConnect connect = new DBConnect();
+    //DBConnect connect = new DBConnect();
 
 
 
@@ -59,10 +63,12 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
             public void onClick(View v) {
                 if(checkedIn) {
                     counter = counter + 1;
+                    inOutButton.setText("Check In");
                     checkedIn = false;
                 }
                 else if(!checkedIn && counter > 0) {
                     counter = counter - 1;
+                    inOutButton.setText("Check Out");
                     checkedIn = true;
                 }
                 txt.setText(Integer.toString(counter));
@@ -74,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
         categories.add("Forrer");
-        categories.add("Hazelrigg");
+        categories.add("MFA");
         categories.add("Thompson");
         categories.add("Pioneer");
 
