@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txt = (TextView) findViewById(R.id.NumberOfSpots);
-        inOutButton = (Button) findViewById(R.id.CheckOutButton);
+        txt = (TextView) findViewById(R.id.spotIndicator);
+        inOutButton = (Button) findViewById(R.id.inOutButton);
         checkedIn = false;
         counter = 7;
         txt.setText(Integer.toString(counter));
